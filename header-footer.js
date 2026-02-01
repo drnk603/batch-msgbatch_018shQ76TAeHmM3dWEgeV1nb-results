@@ -1,0 +1,15 @@
+(function () {
+  var headers = document.querySelectorAll('.dr-header');
+  if (!headers.length) return;
+
+  headers.forEach(function (header) {
+    var toggle = header.querySelector('.dr-nav-toggle');
+    var navList = header.querySelector('.dr-nav-list');
+    if (!toggle || !navList) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = header.classList.toggle('dr-header-nav-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+})();
